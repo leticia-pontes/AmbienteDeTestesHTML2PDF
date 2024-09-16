@@ -170,7 +170,7 @@ dotnet run
 ```bash
 Compilando...
 info: Microsoft.Hosting.Lifetime[14]
-      Now listening on: http://localhost:port
+      Now listening on: http://localhost:port # Abrir esse link
 info: Microsoft.Hosting.Lifetime[0]
       Application started. Press Ctrl+C to shut down.
 info: Microsoft.Hosting.Lifetime[0]
