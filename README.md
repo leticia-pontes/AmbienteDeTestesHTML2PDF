@@ -7,9 +7,6 @@ Projeto desenvolvido durante o 2° semestre de 2024 na disciplina Fábrica de Pr
 - [.NET SDK](https://dotnet.microsoft.com/download) (versão 6.0 ou superior)
 - [Visual Studio](https://visualstudio.microsoft.com/downloads/) ou [Visual Studio Code](https://code.visualstudio.com/)
 
-Aqui está um exemplo de seção para o README que você pode usar para descrever as extensões e configurações recomendadas para desenvolvimento em ASP.NET Core usando VSCode em Linux:
-
----
 
 ## Configuração do Ambiente de Desenvolvimento (Linux)
 
@@ -115,10 +112,6 @@ Para configurar tarefas de build, adicione o seguinte ao seu arquivo `tasks.json
   ]
 }
 ```
-
----
-
-Sinta-se à vontade para ajustar as instruções conforme necessário para atender às suas necessidades específicas.
 
 ## Instruções de Abertura do Projeto
 
