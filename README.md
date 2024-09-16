@@ -158,7 +158,7 @@ cd projeto-integrador-4bcc
 1. **Navegue até o Diretório do Projeto**:
 
 ```bash
-cd htmlpreviewapp
+cd projeto-integrador-4bcc
 ```
 
 2. **Execute o Projeto**:
