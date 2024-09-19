@@ -1,4 +1,6 @@
-# Projeto Integrador - 4° BCC (Unimar)
+# Site de Testes para a Biblioteca HTML2PDF
+
+## Projeto Integrador - 4° BCC (Unimar)
 
 Projeto desenvolvido durante o 2° semestre de 2024 na disciplina Fábrica de Projetos Ágeis IV como método avaliativo. Apoiado pela empresa ***Interfocus***.
 
