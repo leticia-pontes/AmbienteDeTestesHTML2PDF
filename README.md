@@ -122,7 +122,7 @@ Para configurar tarefas de build, adicione o seguinte ao seu arquivo `tasks.json
 1. **Clone o Repositório**:
 
 ```bash
-git clone https://github.com/leticia-pontes/projeto-integrador-4bcc
+git clone https://github.com/leticia-pontes/TesteHTML2PDF
 ```
 
 2. **Navegue até o Diretório do Projeto**:
@@ -142,7 +142,7 @@ cd projeto-integrador-4bcc
 1. Clone o Repositório:
 
 ```bash
-git clone https://github.com/leticia-pontes/projeto-integrador-4bcc
+git clone https://github.com/leticia-pontes/TesteHTML2PDF
 ```
 
 2. **Navegue até o Diretório do Projeto**:
