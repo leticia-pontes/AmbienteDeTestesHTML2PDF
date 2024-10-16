@@ -128,7 +128,7 @@ git clone https://github.com/leticia-pontes/TesteHTML2PDF
 2. **Navegue até o Diretório do Projeto**:
 
 ```bash
-cd projeto-integrador-4bcc
+cd TesteHTML2PDF
 ```
 
 3. **Abra o Projeto**:
@@ -148,7 +148,7 @@ git clone https://github.com/leticia-pontes/TesteHTML2PDF
 2. **Navegue até o Diretório do Projeto**:
 
 ```bash
-cd projeto-integrador-4bcc
+cd TesteHTML2PDF
 ```
 
 3. **Abra o Projeto**:
@@ -160,7 +160,7 @@ cd projeto-integrador-4bcc
 1. **Navegue até o Diretório do Projeto**:
 
 ```bash
-cd projeto-integrador-4bcc
+cd TesteHTML2PDF
 ```
 
 2. **Execute o Projeto**:
