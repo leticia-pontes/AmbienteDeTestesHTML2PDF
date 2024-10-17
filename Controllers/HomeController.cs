@@ -1,5 +1,7 @@
 using System.IO;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using System.Diagnostics;
 using HtmlToPdfConverter.Services;
 using Microsoft.AspNetCore.Mvc;
 using QuestPDF.Infrastructure;
@@ -11,6 +13,9 @@ namespace HtmlPreviewApp.Controllers
         [HttpPost]
         public async Task<ActionResult> ConvertToPdf(IFormFile file)
         {
+            // Inicia a medição do tempo de execução
+            var stopwatch = Stopwatch.StartNew();
+
             // Verifica se um arquivo foi enviado
             if (file == null || file.Length == 0)
             {
@@ -20,6 +25,8 @@ namespace HtmlPreviewApp.Controllers
 
             // Define licença do QuestPDF
             QuestPDF.Settings.License = LicenseType.Community;
+
+            long memoryUsed = 0; // Variável para armazenar o consumo de memória
 
             try
             {
@@ -48,6 +55,29 @@ namespace HtmlPreviewApp.Controllers
             {
                 ViewBag.Message = $"Ocorreu um erro: {ex.Message}";
                 return View("Index");
+            }
+            finally
+            {
+                stopwatch.Stop(); // Para o temporizador
+
+                // Coleta dados de consumo de memória
+                memoryUsed = Process.GetCurrentProcess().PrivateMemorySize64;
+
+                // Cria um objeto com os dados que serão salvos no JSON
+                var conversionData = new
+                {
+                    FileName = file.FileName,
+                    ConversionDate = DateTime.Now,
+                    ExecutionTime = stopwatch.ElapsedMilliseconds, // Tempo em milissegundos
+                    MemoryUsage = memoryUsed // Consumo de memória em bytes
+                };
+
+                // Gera um JSON a partir do objeto de conversão
+                string json = JsonConvert.SerializeObject(conversionData, Formatting.Indented);
+
+                // Escreve o JSON em um arquivo
+                string jsonFilePath = Path.Combine("Assets", "data.json");
+                await System.IO.File.WriteAllTextAsync(jsonFilePath, json);
             }
         }
 
