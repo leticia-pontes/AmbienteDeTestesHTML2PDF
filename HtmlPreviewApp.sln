@@ -5,6 +5,10 @@ VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlPreviewApp", "HtmlPreviewApp.csproj", "{FEC1D722-9A6F-4C45-91C6-5D53E34939CF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "htmltopdf", "..\Bibliotecas\BibliotecaHTML2PDF-Andrei\htmltopdf\htmltopdf.csproj", "{CAF13CFD-EA43-4D33-8701-D4D979B9F811}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlToPdfConverter-Version1", "..\Bibliotecas\BibliotecaHTML2PDF-Laura\ClassLibrary1\HtmlToPdfConverter-Version1.csproj", "{3E420AA4-D007-4998-B3F7-8C51170362AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{FEC1D722-9A6F-4C45-91C6-5D53E34939CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEC1D722-9A6F-4C45-91C6-5D53E34939CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEC1D722-9A6F-4C45-91C6-5D53E34939CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAF13CFD-EA43-4D33-8701-D4D979B9F811}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAF13CFD-EA43-4D33-8701-D4D979B9F811}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAF13CFD-EA43-4D33-8701-D4D979B9F811}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAF13CFD-EA43-4D33-8701-D4D979B9F811}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E420AA4-D007-4998-B3F7-8C51170362AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E420AA4-D007-4998-B3F7-8C51170362AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E420AA4-D007-4998-B3F7-8C51170362AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E420AA4-D007-4998-B3F7-8C51170362AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
