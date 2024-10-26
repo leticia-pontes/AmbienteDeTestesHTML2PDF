@@ -1,4 +1,5 @@
 # Site de Testes para a Biblioteca HTML2PDF
+### README em manutenção
 
 ## Projeto Integrador - 4° BCC (Unimar)
 
@@ -122,33 +123,33 @@ Para configurar tarefas de build, adicione o seguinte ao seu arquivo `tasks.json
 1. **Clone o Repositório**:
 
 ```bash
-git clone https://github.com/leticia-pontes/TesteHTML2PDF
+git clone https://github.com/leticia-pontes/AmbienteDeTestesHTML2PDF
 ```
 
 2. **Navegue até o Diretório do Projeto**:
 
 ```bash
-cd TesteHTML2PDF
+cd AmbienteDeTestesHTML2PDF
 ```
 
 3. **Abra o Projeto**:
 - Clique em File > Open > Project/Solution.
 - Navegue até o arquivo HtmlPreviewApp.sln e clique em Open.
 
-    - Caso o arquivo não exista, selecione o arquivo HtmlPreviewApp.csproj. 
+    - Caso o arquivo não exista, selecione o arquivo AmbienteDeTestesHTML2PDF.csproj. 
 
 ### Abrir no Visual Studio Code
 
 1. Clone o Repositório:
 
 ```bash
-git clone https://github.com/leticia-pontes/TesteHTML2PDF
+git clone https://github.com/leticia-pontes/AmbienteDeTestesHTML2PDF
 ```
 
 2. **Navegue até o Diretório do Projeto**:
 
 ```bash
-cd TesteHTML2PDF
+cd AmbienteDeTestesHTML2PDF
 ```
 
 3. **Abra o Projeto**:
@@ -160,7 +161,7 @@ cd TesteHTML2PDF
 1. **Navegue até o Diretório do Projeto**:
 
 ```bash
-cd TesteHTML2PDF
+cd AmbienteDeTestesHTML2PDF
 ```
 
 2. **Execute o Projeto**:
