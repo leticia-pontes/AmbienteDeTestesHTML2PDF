@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmbienteDeTestesHTML2PDF", "AmbienteDeTestesHTML2PDF.csproj", "{7AE15CAC-4FD3-4E30-89F7-13E8E3D733B4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HtmlToPdfConverter-Version1", "..\..\Projeto Integrador - 4 BCC\Bibliotecas\BibliotecaHTML2PDF-Laura\HtmlToPdfConverter\HtmlToPdfConverter-Version1.csproj", "{F3C27497-3AC5-4DBF-B091-EE6E6FA7DB84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7AE15CAC-4FD3-4E30-89F7-13E8E3D733B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AE15CAC-4FD3-4E30-89F7-13E8E3D733B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AE15CAC-4FD3-4E30-89F7-13E8E3D733B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AE15CAC-4FD3-4E30-89F7-13E8E3D733B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F3C27497-3AC5-4DBF-B091-EE6E6FA7DB84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F3C27497-3AC5-4DBF-B091-EE6E6FA7DB84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F3C27497-3AC5-4DBF-B091-EE6E6FA7DB84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F3C27497-3AC5-4DBF-B091-EE6E6FA7DB84}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A9B45A6-C765-4BC7-8783-BA3E8D556D6C}
+	EndGlobalSection
+EndGlobal

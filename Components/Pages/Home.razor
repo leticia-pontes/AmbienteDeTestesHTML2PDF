@@ -1,0 +1,56 @@
+﻿@page "/"
+@rendermode InteractiveServer
+@inject AmbienteDeTestesHTML2PDF.Services.HTML2PDFConversionService HTML2PDFConversion
+@inject IJSRuntime JSRuntime
+@using Microsoft.AspNetCore.Components.Forms
+
+<PageTitle>Página Inicial</PageTitle>
+
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 15vh;">
+    <h2>Converter HTML para PDF</h2>
+    <h5>Escolha um arquivo (.txt ou .html)</h5>
+    <br />
+
+    <InputFile OnChange="@HandleFileSelected" />
+    <br />
+
+    @if (uploadedFile != null)
+    {
+        <p>Arquivo selecionado: @uploadedFile.Name</p>
+    }
+
+    <br />
+    <button class="btn btn-primary" @onclick="ConvertAndDownloadPdf" disabled="@(!fileLoaded)">Converter e Baixar PDF</button>
+</div>
+
+@code {
+    private IBrowserFile? uploadedFile;
+    private bool fileLoaded = false;
+
+    private void HandleFileSelected(InputFileChangeEventArgs e)
+    {
+        uploadedFile = e.File;
+        fileLoaded = true;
+    }
+
+    private async Task ConvertAndDownloadPdf()
+    {
+        if (uploadedFile != null)
+        {
+            var formFile = await uploadedFile.ToFormFileAsync();
+
+            if (formFile != null)
+            {
+                // Método ConvertToPdf da classe de serviço
+                var memoryStream = await HTML2PDFConversion.ConvertToPdf(formFile, "lib1");
+
+                // Converte o MemoryStream para um byte array
+                var buffer = new byte[memoryStream.Length];
+                await memoryStream.ReadAsync(buffer, 0, (int)memoryStream.Length);
+
+                // Inicia o download do PDF
+                await JSRuntime.InvokeVoidAsync("downloadFile", "output.pdf", buffer);
+            }
+        }
+    }
+}
