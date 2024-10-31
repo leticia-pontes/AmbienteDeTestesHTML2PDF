@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Projeto Integrador - 4 BCC\Bibliotecas\BibliotecaHTML2PDF-Laura\HtmlToPdfConverter\HtmlToPdfConverter-Version1.csproj" />
+    <ProjectReference Include="..\Bibliotecas\HTML2PDF_v1\HTML2PDF_v1.csproj" />
   </ItemGroup>
 
   <ItemGroup>
