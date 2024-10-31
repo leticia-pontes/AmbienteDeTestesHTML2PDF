@@ -1,6 +1,6 @@
 using AmbienteDeTestesHTML2PDF.Components;
 using AmbienteDeTestesHTML2PDF.Services;
-using HtmlToPdfConverter.Services;
+using HTML2PDF_v1.Services;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
-builder.Services.AddSingleton<HtmlToPdfConverterService>(); // Biblioteca
+builder.Services.AddSingleton<HTML2PDF_v1Service>(); // Biblioteca
 builder.Services.AddSingleton<HTML2PDFConversionService>(); // Serviço do Programa
 
 var app = builder.Build();

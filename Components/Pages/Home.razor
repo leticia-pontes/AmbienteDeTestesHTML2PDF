@@ -1,10 +1,10 @@
-﻿@page "/"
+﻿@page "/home"
 @rendermode InteractiveServer
 @inject AmbienteDeTestesHTML2PDF.Services.HTML2PDFConversionService HTML2PDFConversion
 @inject IJSRuntime JSRuntime
 @using Microsoft.AspNetCore.Components.Forms
 
-<PageTitle>Página Inicial</PageTitle>
+<PageTitle>Home - Converter HTML para PDF</PageTitle>
 
 <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 15vh;">
     <h2>Converter HTML para PDF</h2>
@@ -19,8 +19,7 @@
         <p>Arquivo selecionado: @uploadedFile.Name</p>
     }
 
-    <br />
-    <button class="btn btn-primary" @onclick="ConvertAndDownloadPdf" disabled="@(!fileLoaded)">Converter e Baixar PDF</button>
+    <button class="btn btn-primary" @onclick="ConvertAndDownloadPdf" disabled="@(!fileLoaded)" >Converter e Baixar PDF</button>
 </div>
 
 @code {

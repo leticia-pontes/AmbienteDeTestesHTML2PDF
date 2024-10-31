@@ -4,8 +4,7 @@ using Newtonsoft.Json;
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using QuestPDF.Infrastructure;
-using HtmlToPdfConverter.Services;
-//using htmltopdf;
+using HTML2PDF_v1.Services;
 
 namespace AmbienteDeTestesHTML2PDF.Services
 {
@@ -36,7 +35,7 @@ namespace AmbienteDeTestesHTML2PDF.Services
 
                 if (library == "lib1")
                 {
-                    var converter = new HtmlToPdfConverterService();
+                    var converter = new HTML2PDF_v1Service();
                     await converter.ConvertAsync(fileContent, string.Empty, memoryStream);
                 }
 
