@@ -1,17 +1,18 @@
 ﻿@page "/home"
 @rendermode InteractiveServer
-@inject AmbienteDeTestesHTML2PDF.Services.HTML2PDFConversionService HTML2PDFConversion
+@inject AmbienteDeTestesHTML2PDF.Services.HTML2PDF_v1ConverterService HTML2PDF_v1Converter
+@inject AmbienteDeTestesHTML2PDF.Services.HTML2PDF_v3ConverterService HTML2PDF_v3Converter
 @inject IJSRuntime JSRuntime
 @using Microsoft.AspNetCore.Components.Forms
 
 <PageTitle>Home - Converter HTML para PDF</PageTitle>
 
-<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 15vh;">
+<div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 25vh;">
     <h2>Converter HTML para PDF</h2>
     <h5>Escolha um arquivo (.txt ou .html)</h5>
     <br />
 
-    <InputFile OnChange="@HandleFileSelected" />
+    <InputFile class="input-arquivo" OnChange="@HandleFileSelected" />
     <br />
 
     @if (uploadedFile != null)
@@ -19,12 +20,20 @@
         <p>Arquivo selecionado: @uploadedFile.Name</p>
     }
 
-    <button class="btn btn-primary" @onclick="ConvertAndDownloadPdf" disabled="@(!fileLoaded)" >Converter e Baixar PDF</button>
+    <h5>Escolha a biblioteca:</h5>
+    <select @bind="@selectedLibrary">
+        <option value="v1">HTML2PDF_v1</option>
+        <option value="v3">HTML2PDF_v3</option>
+    </select>
+    <br />
+
+    <button style="margin-top: 2vh;" class="btn btn-primary" @onclick="ConvertAndDownloadPdf" disabled="@(!fileLoaded)">Converter e Baixar PDF</button>
 </div>
 
 @code {
     private IBrowserFile? uploadedFile;
     private bool fileLoaded = false;
+    private string selectedLibrary = "v1"; // Valor padrão da biblioteca selecionada
 
     private void HandleFileSelected(InputFileChangeEventArgs e)
     {
@@ -40,15 +49,33 @@
 
             if (formFile != null)
             {
-                // Método ConvertToPdf da classe de serviço
-                var memoryStream = await HTML2PDFConversion.ConvertToPdf(formFile, "lib1");
+                MemoryStream memoryStream;
 
-                // Converte o MemoryStream para um byte array
-                var buffer = new byte[memoryStream.Length];
-                await memoryStream.ReadAsync(buffer, 0, (int)memoryStream.Length);
+                // Usando a biblioteca escolhida
+                if (selectedLibrary == "v1")
+                {
+                    memoryStream = await HTML2PDF_v1Converter.ConvertToPdf(formFile);
+                }
+                else
+                {
+                    memoryStream = await HTML2PDF_v3Converter.ConvertToPdf(formFile);
+                }
 
-                // Inicia o download do PDF
-                await JSRuntime.InvokeVoidAsync("downloadFile", "output.pdf", buffer);
+                // Verifique se o MemoryStream contém dados
+                if (memoryStream.Length > 0)
+                {
+                    // Converte o MemoryStream para um byte array
+                    var buffer = new byte[memoryStream.Length];
+                    await memoryStream.ReadAsync(buffer, 0, (int)memoryStream.Length);
+
+                    // Inicia o download do PDF
+                    await JSRuntime.InvokeVoidAsync("downloadFile", "output.pdf", buffer);
+                }
+                else
+                {
+                    // Trate o caso onde o PDF não foi gerado corretamente
+                    Console.WriteLine("O PDF não foi gerado corretamente.");
+                }
             }
         }
     }

@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AmbienteDeTestesHTML2PDF", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HTML2PDF_v1", "..\Bibliotecas\HTML2PDF_v1\HTML2PDF_v1.csproj", "{633BBDA9-5467-49EA-9757-456EB93EAE42}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HTML2PDF_v3", "..\Bibliotecas\HTML2PDF_v3\HTML2PDF_v3.csproj", "{0819A16D-9408-4DEA-B37C-E36430D2ADF4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{633BBDA9-5467-49EA-9757-456EB93EAE42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{633BBDA9-5467-49EA-9757-456EB93EAE42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{633BBDA9-5467-49EA-9757-456EB93EAE42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0819A16D-9408-4DEA-B37C-E36430D2ADF4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0819A16D-9408-4DEA-B37C-E36430D2ADF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0819A16D-9408-4DEA-B37C-E36430D2ADF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0819A16D-9408-4DEA-B37C-E36430D2ADF4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
