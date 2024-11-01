@@ -8,12 +8,11 @@ using HTML2PDF_v1.Services;
 
 namespace AmbienteDeTestesHTML2PDF.Services
 {
-    public class HTML2PDFConversionService
+    public class HTML2PDF_v1ConverterService
     {
-        public async Task<MemoryStream> ConvertToPdf(IFormFile file, string library)
+        public async Task<MemoryStream> ConvertToPdf(IFormFile file)
         {
             var stopwatch = Stopwatch.StartNew();
-            long memoryUsed = 0;
 
             if (file == null || file.Length == 0)
             {
@@ -33,11 +32,8 @@ namespace AmbienteDeTestesHTML2PDF.Services
 
                 var memoryStream = new MemoryStream();
 
-                if (library == "lib1")
-                {
-                    var converter = new HTML2PDF_v1Service();
-                    await converter.ConvertAsync(fileContent, string.Empty, memoryStream);
-                }
+                var converter = new HTML2PDF_v1Service();
+                await converter.ConvertAsync(fileContent, string.Empty, memoryStream);
 
                 memoryStream.Position = 0;
                 return memoryStream;
@@ -45,14 +41,13 @@ namespace AmbienteDeTestesHTML2PDF.Services
             finally
             {
                 stopwatch.Stop();
-                memoryUsed = Process.GetCurrentProcess().PrivateMemorySize64;
 
                 var conversionData = new
                 {
                     FileName = file.FileName,
                     ConversionDate = DateTime.Now,
                     ExecutionTime = stopwatch.ElapsedMilliseconds,
-                    MemoryUsage = memoryUsed
+                    WorkingSetMemory = Process.GetCurrentProcess().WorkingSet64
                 };
 
                 string json = JsonConvert.SerializeObject(conversionData, Formatting.Indented);

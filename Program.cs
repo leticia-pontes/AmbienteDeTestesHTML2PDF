@@ -9,8 +9,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+// Version 1
 builder.Services.AddSingleton<HTML2PDF_v1Service>(); // Biblioteca
-builder.Services.AddSingleton<HTML2PDFConversionService>(); // Serviço do Programa
+builder.Services.AddSingleton<HTML2PDF_v1ConverterService>(); // Serviço do Programa
+// Version 3
+builder.Services.AddSingleton<HTML2PDF_v3ConverterService>(); // Serviço do Programa
 
 var app = builder.Build();
 

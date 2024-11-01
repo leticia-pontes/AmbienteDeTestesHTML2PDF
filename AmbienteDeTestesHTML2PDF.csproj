@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Bibliotecas\HTML2PDF_v1\HTML2PDF_v1.csproj" />
+    <ProjectReference Include="..\Bibliotecas\HTML2PDF_v3\HTML2PDF_v3.csproj" />
   </ItemGroup>
 
   <ItemGroup>
